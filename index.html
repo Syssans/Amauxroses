@@ -1,36 +1,43 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Poésie Interactive</title>
-  <link rel="stylesheet" href="style.css"/>
+  <title>Accueil - Amauxroses</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌹</text></svg>">
+
 </head>
 <body>
-<div class="menu-wrapper" id="menuWrapper">
-  <div class="menu-bar" id="menuBar"></div>
-  <div class="menu-links" id="menuLinks">
-    <div class="title">✦ Mon Site</div>
-    <div class="menu-item" data-section="pensees">Pensées</div>
-    <div class="menu-item" data-section="pastilles">Pastilles</div>
-    <div class="menu-item" data-section="about">À propos</div>
-  </div>
-</div>
 
-
-<div class="text-container">
-  <div class="text-content">Bienvenue dans mon univers poétique.</div>
-  <button class="reponse-btn" id="reponseBtn">Voir la réponse</button>
-  <div class="text-reponse" id="textReponse"></div>
-</div>
-
-
-  <div class="scrollbar">
-    <div class="scroll-inner" id="scrollInner">
-      <!-- Items generated via JS -->
-    </div>
+  <!-- Écran de chargement -->
+  <div id="loading-screen">
+    <div class="logo">🌹</div>
   </div>
 
-  <script src="script.js"></script>
+  <!-- Contenu principal (caché au début) -->
+  <div id="home-content">
+    <h1 class="home-title">Bienvenue</h1>
+    <a href="pastilles.html" class="enter-button">Entrer</a>
+  </div>
+
+  <script>
+    window.addEventListener("load", () => {
+      const loading = document.getElementById("loading-screen");
+      const content = document.getElementById("home-content");
+
+      // (1) Pause d’attente (logo visible)
+      setTimeout(() => {
+        // (2) Lance l’ouverture florale
+        loading.classList.add("open-flower");
+
+        // (3) Affiche le contenu APRES l’ouverture
+        setTimeout(() => {
+          content.classList.add("visible");
+          loading.remove();
+        }, 2500); // durée de l'animation florale
+      }, 2500); // durée d'affichage initial du logo
+    });
+  </script>
 </body>
 </html>

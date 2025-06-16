@@ -1,0 +1,212 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: serif;
+  background: rgb(226, 196, 196);
+  color: #111;
+}
+
+.site-header {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1000;
+  background: transparent;
+  pointer-events: none; /* ne gêne pas les clics dessous */
+  transform-origin: top center;
+}
+
+.site-title {
+  font-family: Constantia;
+  letter-spacing: 0.1em;
+  font-weight: normal;
+  margin: 0;
+  opacity: 0.8;
+  text-align: center;
+  color: #490303;
+  transition: transform 0.5s ease, left 0.5s ease;
+  font-size: clamp(1.2rem, 5vw, 5rem);
+}
+
+.sub-title {
+  font-family: serif;
+  font-weight: normal;
+  margin: 0;
+  opacity: 0.8;
+  text-align: center;
+  color: #000000;
+  font-size: 1.5rem;
+}
+
+
+
+.pensees-container {
+  max-width: 100%;
+  padding: 200px 100px;
+  display: flex;
+  flex-direction: column;
+  gap: 200px; /* espacement important entre les blocs */
+  align-items: center;
+}
+
+@media screen and (max-width: 768px) {
+  .pensees-container {
+  max-width: 100%;
+  padding: 200px 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 200px; /* espacement important entre les blocs */
+  align-items: center;
+  }
+}
+
+.pensee {
+  max-width: 50%;
+  font-size: 1.5rem;
+  line-height: 1.8;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 2s ease, transform 2s ease;
+  position: relative;
+  background: #d9baba;
+  border-radius: 50px;
+  padding: 30px;
+}
+
+.pensee.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.pensee.left {
+  align-self: flex-start;
+  text-align: left;
+  margin-left: 60px;
+}
+
+.pensee.right {
+  align-self: flex-end;
+  text-align: right;
+  margin-right: 60px;
+}
+
+  /* === MENU BAR === */
+.menu-bar {
+  height: 25vh;
+  background: #ba9494;
+  padding: 5px;
+  cursor: pointer;
+  transition: background 0.3s;
+  border-radius: 10px;
+  position: relative; /* ← nécessaire pour positionner le menu par rapport à elle */
+}
+
+.menu-wrapper {
+  position: fixed;
+  top: 50%;
+  left: 30px;
+  transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  z-index: 10;
+}
+
+  
+.menu-bar.active {
+  background: #490303;
+}
+  
+.menu-links {
+  position: absolute;
+  top: 50%;
+  left: 20px; /* espace entre la barre et les liens */
+  transform: translateY(-50%);
+  display: none;
+  flex-direction: column;
+  gap: 10px;
+  color: #490303;
+  font-size: larger;
+  line-height: 2em;
+  background: rgb(226, 196, 196);
+  animation: slideIn 0.3s ease forwards;
+}
+
+
+.menu-wrapper:hover .menu-links {
+  display: flex;
+}
+
+.menu-wrapper:hover .menu-bar {
+  background: #490303;
+}
+
+.menu-wrapper.active .menu-bar {
+  background: #490303;
+}
+
+.menu-wrapper.active .menu-links {
+  display: flex;
+}
+
+.menu-bar.active .menu-links {
+  display: flex;
+}
+  
+@keyframes slideIn {
+  from {
+    transform: translateX(-20px) translateY(-50%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0px) translateY(-50%);
+    opacity: 1;
+  }
+}
+
+.menu-bar.active + .menu-links {
+  display: flex;
+}
+  
+.menu-item, .title {
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 768px) {
+  .menu-wrapper {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%; /* prend toute la largeur */
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+  }
+
+  .menu-bar {
+    width: 100%;
+    height: 50px;
+    background: #490303;
+    transition: none;
+  }
+
+  .menu-links {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 10px 0;
+    background: rgb(226, 196, 196);
+
+  }
+
+  .menu-links a {
+    font-size: 1rem;
+    padding: 0 10px;
+  }
+}
