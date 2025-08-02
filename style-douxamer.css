@@ -176,13 +176,9 @@ body {
 }
 
 .flex-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 750px;
+  max-width: 750px;
   margin: 0px auto;
   align-items: center;
-  justify-content: space-around;
 }
 
 /* Set display preferences for poem. */
@@ -287,12 +283,9 @@ body {
   }
 
   .flex-container {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  width: 100%;
+  max-width: 100%;
   align-items: center;
-  justify-content: center;
+  margin-left: 60px;
 }
 }
 
