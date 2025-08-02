@@ -44,6 +44,7 @@ body {
 .pensees-container {
   max-width: 100%;
   padding: 200px 100px;
+  padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   gap: 200px; /* espacement important entre les blocs */
@@ -54,6 +55,7 @@ body {
   .pensees-container {
   max-width: 100%;
   padding: 200px 10px;
+  padding-bottom: 100px;
   display: flex;
   flex-direction: column;
   gap: 200px; /* espacement important entre les blocs */
@@ -209,4 +211,78 @@ body {
     font-size: 1rem;
     padding: 0 10px;
   }
+}
+
+#flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 750px;
+  margin: 0px auto;
+  justify-content: space-around;
+  align-items: center;
+}
+
+/* Set display preferences for poem. */
+
+.poem {
+  width: 450px;
+  margin: auto;
+  /*padding: 10px 0;*/
+  font-family: Baskerville;
+  font-size: 14px;
+  text-align: left;
+}
+
+/* Add spacing to each stanza. */
+
+.poem p {
+  margin-bottom: 15px;
+  line-height: 1.45em;
+}
+
+/* Set type preferences for poem's headings.  */
+
+.poem h1,
+.poem h2 {
+  font-family: Baskerville;
+  font-weight: normal;
+  text-align: center;
+}
+
+/* Set display preferences for title of the poem. */
+
+.poem h1 {
+  font-size: 34px;
+  margin-bottom: 10px;
+}
+
+/* Set display preferences for name of the poet. */
+
+.poem h2 {
+  font-size: 18px;
+  font-style: italic;
+  margin-bottom: 30px;
+}
+
+/* Make the first letter a drop cap/initial. */
+
+.poem h2+p:first-letter {
+  float: left;
+  font-size: 40px;
+  margin: 12px 5px 0px 0px;
+}
+
+/* Set display preferences for first line of each stanza. */
+
+.poem p:first-line {
+  font-variant: small-caps;
+  letter-spacing: 1px;
+}
+
+/* Add margin and padding at end of the poem. */
+
+.poem p:last-child {
+  margin-bottom: 15px;
+  padding-bottom: 15px;
 }
