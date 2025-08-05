@@ -179,12 +179,13 @@ body {
   max-width: 750px;
   margin: 0px auto;
   align-items: center;
+  position: relative;
 }
 
 /* Set display preferences for poem. */
 
 .poem {
-  width: 450px;
+  max-width: 450px;
   margin: auto;
   /*padding: 10px 0;*/
   font-family: Baskerville;
@@ -286,6 +287,7 @@ body {
   max-width: 100%;
   align-items: center;
   margin-left: 60px;
+  position: relative;
 }
 }
 
