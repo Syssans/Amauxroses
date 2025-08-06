@@ -246,6 +246,11 @@ body {
   padding-bottom: 15px;
 }
 
+.iconcentre {
+  text-align: center;
+  font-size: 3rem;
+}
+
 @media screen and (max-width: 768px) {
   .menu-wrapper {
     position: absolute;
@@ -284,10 +289,15 @@ body {
   }
 
   .flex-container {
-  max-width: 100%;
-  align-items: center;
-  margin-left: 60px;
-  position: relative;
-}
+    max-width: 100%;
+    align-items: center;
+    margin-left: 60px;
+    position: relative;
 }
 
+  .iconcentre {
+    margin-left: 60px;
+    text-align: center;
+    font-size: 3rem;
+}
+}
