@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Abime</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      color: #fff;
+      font-family: 'Courier New', Courier, monospace;
+      line-height: 1.6;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    header {
+      text-align: center;
+      margin: 40px 0 20px;
+    }
+
+    header img {
+      max-width: 400px;
+    }
+
+    h1 {
+      font-size: 2em;
+      margin-top: 10px;
+      letter-spacing: 2px;
+    }
+
+    .container {
+      width: 90%;
+      max-width: 800px;
+      padding: 20px;
+      background-color: #111;
+      border: 1px solid #333;
+      box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
+      margin-bottom: 40px;
+    }
+
+    .text-entry {
+      margin-bottom: 40px;
+      border-left: 4px solid #fff;
+      padding-left: 20px;
+    }
+
+    .text-entry h2 {
+      font-size: 1.4em;
+      margin-bottom: 10px;
+      color: #ccc;
+    }
+
+    .text-entry p {
+      white-space: pre-wrap;
+    }
+
+    footer {
+      font-size: 0.8em;
+      color: #666;
+      margin-bottom: 20px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="deathcore-amauxroses-white.png" alt="Logo">
+    <h1>La lucidité dans l'abîme</h1>
+  </header>
+
+  <div class="container" id="textContainer">
+    <!-- Les textes s'afficheront ici -->
+  </div>
+
+  <footer>
+    Une réalité florale dans une parenthèse épineuse 🥀
+  </footer>
+
+  <script>
+    const textesPhilosophiques = [
+      {
+        titre: "Le Bonheur",
+        contenu: `Le bonheur, une silhouette spectatrice d’un marathon: ta vie.
+Une silhouette qui fera quelques kilomètres à tes côtés avant de disparaître derrière la ligne d’un virage, te laissant seul avec l’essoufflement en héritage.
+Courir en duo c’est toujours plus stimulant, c’est dans ces moments que tu te sens le plus vivant.
+Pour certains, se servir d’elle comme guide rend son absence synonyme d’errance.
+La chercher à tout prix c’est tourner la tête, dévisager des spectateurs dans l’objectif de reconnaître l’illusion d’une silhouette et la forcer à courir à tes cotés sur un chemin dévié le temps de te concentré sur le bas cotés.
+Enfin, s’arrêter n’est pas la solution. La condition de son apparition dépend de la cadence et de l’endurance à suivre ton propre sens.
+Alors continuer d’avancer sans la chercher est le meilleur moyen de faire le plus d’heure accompagné par le bonheur.
+`
+      },
+      {
+        titre: "L'Anxiété",
+        contenu: `Mon esprit est un écrivain de guerre dans un monde en paix.
+Il rédige les drames avant qu’ils n’existent,
+scénarise des pertes avant d’aimer,
+enterre les siens avant qu’ils ne tombent.
+
+C’est pas la douleur qui tue,
+c’est l’imagination de la souffrance,
+
+L’anxiété, c’est raturer la vie avant de l’écrire.
+C’est un peu s’écorcher au futur, jusqu’à en détester le présent.
+`
+      },
+      {
+        titre: "Fragments d’abîme",
+        contenu: `Penser, c’est creuser un trou dans la lumière pour mieux contempler les ténèbres.`
+      }
+    ];
+
+    const container = document.getElementById('textContainer');
+
+    textesPhilosophiques.forEach(texte => {
+      const entry = document.createElement('div');
+      entry.classList.add('text-entry');
+
+      const title = document.createElement('h2');
+      title.textContent = texte.titre;
+
+      const content = document.createElement('p');
+      content.textContent = texte.contenu;
+
+      entry.appendChild(title);
+      entry.appendChild(content);
+      container.appendChild(entry);
+    });
+  </script>
+</body>
+</html>
